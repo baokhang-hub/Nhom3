@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>CV - Trần Trọng Nghĩa</title>
+    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+ <header class="header">  
+  <div class="profile-img">
+    <img src="smith.JPG" alt="Ảnh đại diện" width="150" class="avt">
+  </div>
+  
+  <div class="profile-info">
+    <h1>TRẦN TRỌNG NGHĨA</h1>
+    <h2>Lập trình viên Web | Sinh viên ngành CNTT</h2>
+    <hr>
+    <ul class="contact">
+      <li>📅 22/12/2005</li>
+      <li>📍 Thạnh Lộc, Quận 12, TP.HCM</li>
+      <li>📞 0933976xxx</li>
+      <li>📘 <a href="https://www.facebook.com/trngiaa/">FB: trngia</a></li>
+      <li>📸 <a href="https://www.tiktok.com/@trngia25?is_from_webapp=1&sender_device=pc">tiktok: trngia22</a></li>
+    </ul>
+  
+  <nav class="navbar-1">
+      <a href="#info">Thông tin cá nhân</a>
+      <a href="#career">Mục tiêu nghề nghiệp</a>
+      <a href="#hobbies">Sở thích</a>
+      <a href="#skills">Kỹ năng</a>
+      <a href="#certs">Chứng chỉ</a>
+      <a href="#projects">Dự án</a>
+      <a href="#contact">Liên hệ</a>
+      <a href="CV- Trần Trọng Nghĩa.pdf" download class="download-cv glow-loop">Tải CV PDF</a>
+  </nav>
+  </div>
+ </header>
+
+<!-- Thông tin các nhân -->
+    <section id="info" class="cv-section">
+      <h2>THÔNG TIN CÁ NHÂN</h2>
+      <div class="career-box">
+      <ul>
+      <li><b> Ngày sinh:</b> 22/12/2005</li>
+      <li><b> Giới tính:</b> Nam</li>
+      <li><b> Địa chỉ:</b> Thạnh Lộc, Quận 12, TP.HCM</li>
+      <li><b> SĐT:</b> 09339766xx</li>
+      <li><b> Học vấn:</b> Sinh viên năm hai trường Đại học Giao Thông Vận Tải TPHCM</li>
+      </ul>
+      </div>
+    </section> 
+<!-- Mục tiêu nghề nghiệp -->
+    <section id="career" class="cv-section">
+      <h2 class="career-title">MỤC TIÊU NGHỀ NGHIỆP</h2>
+      <div class="career-box">
+      <h3>Mục tiêu ngắn hạn</h3>
+      <p>
+        Hoàn thiện tốt chương trình học, tích lũy kinh nghiệm thực tế qua thực tập và dự án nhằm nâng cao kỹ năng lập trình và làm việc nhóm.
+      </p>
+      </div>
+      <div class="career-box">
+      <h3>Mục tiêu dài hạn</h3>
+      <p>
+       Trở thành lập trình viên chuyên nghiệp, phát triển lên vị trí Senior Developer hoặc Solution Architect, đóng góp vào các sản phẩm công nghệ có giá trị thực tiễn.
+      </p>
+      </div>
+    </section>
+
+    <!-- Sở thích -->
+      <section class="cv-section" id="hobbies">
+        <h2 class="hobbies-title">SỞ THÍCH</h2>
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+          <div class="hobby-icon">⚽</div>
+          <h3>Thể thao</h3>
+          <p>Rèn luyện sức khỏe, tinh thần đồng đội và giải trí.</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🎧</div>
+          <h3>Nghe nhạc</h3>
+          <p>Thư giãn, nâng cao tâm trạng và cảm hứng sáng tạo.</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🎮</div>
+          <h3>Chơi game</h3>
+          <p>Giải trí và cải thiện tư duy chiến thuật.</p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">📚</div>
+          <h3>Đọc sách</h3>
+          <p>Mở rộng kiến thức và phát triển tư duy logic.</p>
+        </div>
+        </div>
+      </section>
+
+    <section id="skills" class="cv-section">
+    <h2>KỸ NĂNG</h2>
+
+    <!-- Toggle Button -->
+    <div class="toggle-container">
+      <button id="skillsBtn" class="toggle-btn active">Skills</button>
+      <button id="toolsBtn" class="toggle-btn">Tools</button>
+    </div>
+
+    <!-- Skills Group -->
+    <div id="skillsGroup" class="skills-wrapper">
+      <div class="skills-row">
+        <div class="skill-item" data-name="HTML - 80%"><img src="html5.png" alt="HTML5"></div>
+        <div class="skill-item" data-name="CSS - 75%"><img src="css3.png" alt="CSS3"></div>
+        <div class="skill-item" data-name="javascript - 70%"><img src="js.png" alt="JS"></div>
+      </div>
+      <div class="skills-row">
+        <div class="skill-item" data-name="Python - 65%"><img src="python.png" alt="Python"></div>
+        <div class="skill-item" data-name="C++ - 60%"><img src="c++.jpg" alt="C++"></div>
+      </div>
+    </div>
+
+    <!-- Tools Group -->
+    <div id="toolsGroup" class="skills-wrapper hidden">
+      <div class="skills-row">
+        <div class="skill-item" data-name="Photoshop - 60%"><img src="ps.jpg" alt="Photoshop"></div>
+        <div class="skill-item" data-name="Canva - 90%"><img src="canva.jpg" alt="Canva"></div>
+        <div class="skill-item" data-name="VS Studio - 60%"><img src="vsstudio.jpg" alt="Figma"></div>
+        <div class="skill-item" data-name="Capcut - 70%"><img src="capcut.png" alt="CapCut"></div>
+      </div>
+      <div class="skills-row">
+        <div class="skill-item" data-name="VS Code - 80%"><img src="vscode.jpg" alt="VSCode"></div>
+        <div class="skill-item" data-name="Github - 30%"><img src="github.png" alt="GitHub"></div>
+      </div>
+    </div>
+
+    <!-- Ngôn ngữ -->
+    <h2>NGÔN NGỮ</h2>
+    <div class="career-box">
+      <ul>
+        <li><p>Tiếng Việt (Bản ngữ)</p></li>
+        <li><p>Tiếng Anh Giao Tiếp</p></li>
+      </ul>
+    </div>
+  </section>
+  
+    <!-- Chứng chỉ -->
+    <section id="certs" class="cv-section">
+     <h2>CHỨNG CHỈ - GIAI THƯỞNG</h2>
+     <div class="cert-grid">
+      <div class="cert-item">
+        <img src="w.png" alt="Chứng chỉ MOS" class="popup-img">
+        <p>MOS Word trên 900 điểm</p>
+      </div>
+      <div class="cert-item">
+        <img src="ppt.png" alt="Chứng chỉ Web MOS" class="popup-img">
+        <p>MOS PowerPoint trên 800 điểm</p>
+      </div>
+     </div>
+    </section>
+    
+      <!-- Dự án -->
+      <section id="projects" class="cv-section">
+        <h2 class="section-title">DỰ ÁN</h2>
+        <div class="project-grid">
+      <!-- Dự án 1 -->
+      <div class="project-wrapper">
+      <div class="project-card">
+        <img src="robot.jpg" alt="Robot tìm đường" class="project-img">
+        <h3 class="project-title">Game: Robot tìm đường</h3>
+        <p class="project-time">09/2024 – 03/2025</p>
+      </div>
+      <div class="project-desc-below">
+        <ul class="project-desc-list">
+        <li>Python, AI, Tkinter</li>
+        <li>Dự án sử dụng AI để nhận diện biển số xe, giao diện lập trình với Tkinter và có khả năng xuất hóa đơn tự động.</li>
+        </ul>
+      </div>
+      </div>
+      <!-- Dự án 2 -->
+      <div class="project-wrapper">
+      <div class="project-card">
+        <img src="pj.png" alt="Hệ thống AI" class="project-img">
+        <h3 class="project-title">Hệ thống phát hiện biển số xe</h3>
+        <p class="project-time">3/2024 – 5/2025</p>
+      </div>
+     <div class="project-desc-below">
+      <ul class="project-desc-list">
+        <li>Python, SQL</li>
+        <li>Game áp dụng thuật toán Greedy Best-First Search để tìm đường đi hiệu quả trong môi trường lưới.</li>
+      </ul>
+      </div>
+      </div>
+      </section>
+  <!-- Liên hệ -->
+    <section id="contact" class="cv-section">
+      <h2>LIÊN HỆ</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/trngiaa/"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/tr.ngiaa_/"><i class="fab fa-instagram"></i></a></li>
+         <li><a href="https://zalo.me/0933976685"><img src="zalo.png" alt="zalo" style="width:20px; height:20x;border-radius: 100%;"></a></li>
+      </ul>
+    </section>
+  <!-- Popup overlay -->
+    <div class="popup-container" id="popup">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <img class="popup-image" id="popupImage" src="" alt="Preview">
+    </div>
+
+  <!-- Nút về đầu trang -->
+  <a href="#" class="back-to-top glow-loop">↑</a>
+  <footer class="footer">
+    <p> CREATED BY TRẦN TRỌNG NGHĨA.<span> | </span>&copy; 2025</p>
+  </footer>
+<script src="cv.js"></script>
+</body>
+</html>

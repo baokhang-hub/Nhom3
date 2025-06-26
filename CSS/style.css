@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.body-index {
+    line-height: 1.6;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, rgba(0,180,216,0.2), rgba(255,255,255,0.1)),
+                    url('http://wallup.net/wp-content/uploads/2016/07/20/28856-sky-night-lights.jpg');
+}
+
+
+header {
+  margin-top: 40px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+.image {
+    width: 200px;
+    height: auto;
+}
+
+.member-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.member-card {
+  width: 200px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.member-card h3 {
+  margin-top: 12px;
+  font-size: 20px;
+  color: #0d47a1;
+}
+
+/* Hiệu ứng fade-in khi load */
+.fade-in {
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

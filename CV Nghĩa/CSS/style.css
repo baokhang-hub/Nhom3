@@ -1,0 +1,1644 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff; /* Nền trắng cho toàn bộ trang */
+  color: #000;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.main-nav {
+  width: 100vw;
+  height: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 50px 0 50px;
+  box-sizing: border-box;
+  position: fixed;
+  color: #fff;
+  z-index: 10;
+  top: 0;
+  
+}
+
+.hero {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('../images/smith.JPG') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+}
+
+.animated-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1s forwards;
+  margin-right: 1px;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cv-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.cv-section.show-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: #000; /* Nền đen mặc định cho nav */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Thêm bóng nhẹ để tạo hiệu ứng box nổi */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+.logo:hover {
+  background-color: #333; /* Nền xám đậm khi hover */
+  color: #fff; /* Giữ nguyên màu chữ hoặc thay đổi nếu muốn */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2); /* Bóng đổ khi hover */
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem; /* Điều chỉnh kích thước font cho phù hợp */
+  font-weight: 600;
+  padding: 8px 10px; /* Thêm padding để tạo "box" cho từng link */
+  border-radius: 10px; /* Bo góc nhẹ */
+  background-color: black; /* Nền trong suốt mặc định */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi */
+  display: block; /* Quan trọng: làm cho link chiếm đủ không gian padding */
+}
+
+.main-nav ul li a:hover {
+  background-color: #2196f3; /* Nền màu xanh khi hover */
+  color: #fff; /* Chữ trắng khi hover */
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4); /* Bóng đổ màu xanh khi hover */
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  background-color:#1a1a1a; 
+  box-shadow:box-shadow 0 4px 15px rgba(0, 0, 0, 0.7); 
+  color: #2196f3;
+}
+
+.hero-left {
+  margin-left: 10%; /* Điều chỉnh khi cần để có thêm khoảng đệm bên trái */
+  padding: 0 5px; /* Thêm một số khoảng đệm xung quanh văn bản */
+  box-sizing: border-box;
+  text-align: left; /* Đảm bảo văn bản được căn trái */
+  color: #fff; /* Màu chữ trắng để nổi bật trên nền tối */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px; /* Điều chỉnh khi cần */
+}
+
+.hero-left h2 {
+  font-size: 2.5rem; /* Điều chỉnh cỡ chữ khi cần */
+  margin-bottom: 10px;
+}
+
+.hero-left h1 {
+  font-size: 4rem; /* Điều chỉnh cỡ chữ cho tên */
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1; /* Điều chỉnh chiều cao dòng nếu cần */
+}
+
+.hero-left p {
+  font-size: 1.5rem; /* Điều chỉnh cỡ chữ cho mô tả */
+  margin-bottom: 30px;
+}
+
+.hero-left .btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 15px;
+  background-color: #2196f3; /* Nền xanh cho nút */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero-left .btn:hover {
+  background-color: #1976d2; /* Màu xanh đậm hơn khi di chuột */
+}
+.hero-left a.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #2196f3;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-left a.btn:hover {
+  background-color: #1976d2;
+  transform: translateY(-3px);
+}
+
+
+/*--ABOUT --*/
+.about {
+  background-color: #fff; /* Nền trắng như mẫu */
+  color: #000; /* Chữ đen trên nền trắng */
+  padding: 80px 50px; /* Khoảng đệm trên dưới và hai bên */
+  text-align: center; /* Căn giữa tiêu đề */
+}
+
+.section-title {
+  font-size: 3rem; /* Cỡ chữ lớn cho tiêu đề */
+  font-weight: bold;
+  margin-bottom: 60px; /* Khoảng cách dưới tiêu đề */
+  color: #000; /* Đảm bảo màu đen */
+  display: inline-block;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;         /* Chiều dài dấu gạch chân */
+  height: 4px;         /* Độ dày */
+  background-color: #2196f3; /* Màu xanh dương */
+  margin: 12px auto 0 auto;  /* Canh giữa */
+  border-radius: 4px;
+}
+
+.about-content {
+  display: flex; /* Sử dụng flexbox để tạo bố cục 2 cột */
+  align-items: flex-start; /* Căn giữa các item theo chiều dọc */
+  justify-content: center; /* Căn giữa nội dung nếu tổng chiều rộng nhỏ hơn */
+  gap: 50px; /* Khoảng cách giữa hai cột */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa của nội dung */
+  margin: 0 auto; /* Căn giữa nội dung về giữa trang */
+  text-align: left; /* Đặt lại căn trái cho nội dung văn bản */
+}
+
+.about-text {
+  flex: 1; /* Cho phép phần text co giãn */
+  max-width: 600px; /* Giới hạn chiều rộng của khối text */
+}
+
+.about-boxes-grid {
+    display: grid; /* Sử dụng Grid để sắp xếp các box bên trong about-text */
+    grid-template-columns: 1fr; /* Mặc định 1 cột, sẽ xuống hàng trên màn hình nhỏ */
+    gap: 30px; /* Khoảng cách giữa các box */
+    /* Nếu bạn muốn 2 cột trên màn hình lớn, có thể dùng: */
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+}
+
+.about-box-item {
+    background-color: #f7f7f7; /* Nền xám nhạt cho box */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Đảm bảo văn bản trong box căn trái */
+}
+
+.about-box-item:hover {
+    background-color: #e0f2f7; /* Màu xanh nhạt khi hover */
+    transform: translateY(-5px); /* Hiệu ứng nâng nhẹ */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ đậm hơn */
+}
+
+.about-box-item.no-hover-effect:hover h3,
+.about-box-item.no-hover-effect:hover p {
+    color: #000; /* Giữ màu chữ mặc định */
+}
+
+.about-box-item h3 {
+    font-size: 1.5rem; /* Cỡ chữ cho tiêu đề box */
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.about-box-item p {
+    font-size: 1rem; /* Cỡ chữ cho nội dung box */
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-image {
+  position: relative; /* Để có thể sử dụng hiệu ứng hover */
+  flex: 0 0 auto; /* Ngăn hình ảnh co giãn, chỉ chiếm đúng kích thước của nó */
+  width: 400px; /* Đặt chiều rộng cố định cho khung ảnh */
+  height: 700px; 
+  overflow: visible; /* Đảm bảo ảnh không tràn ra khỏi khung */
+  cursor: pointer;
+}
+
+.about-image img {
+  width: 100%; /* Ảnh chiếm toàn bộ chiều rộng của khung */
+  height: 100%; /* Ảnh chiếm toàn bộ chiều cao của khung */
+  object-fit: cover; /* Đảm bảo ảnh được cắt/thu phóng để vừa khung mà không bị méo */
+  display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+  border-radius: 20px;
+  transition: transform 0.8s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translate(-30px, -30px);
+  opacity: 1;   
+}
+/* Hiện ra mượt từ trái trên xuống */
+.about-image img.fade-in {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.about-image:hover img{
+  transform: scale(1.05) ; /* Hiệu ứng phóng to nhẹ khi hover */
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+.about-box-item ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.vertical-shadow {
+  position: absolute;
+  bottom: 10px;
+  right: -20px; /* điều chỉnh để lộ ra bên trái */
+  width: 380px; /* độ dày của bóng */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* đậm hơn để giống mẫu */
+  border-radius: 10px;
+  z-index: 1;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.2); /* đổ bóng nhẹ */
+  opacity: 1;
+  transition: transform 0.8s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+  transform: translate(30px, 30px);
+}
+/* Hiện ra mượt từ dưới phải lên */
+.vertical-shadow.fade-in {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.about-image img,
+.vertical-shadow {
+  opacity: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.pagination-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.pagination-dots .dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination-dots .dot.active {
+  background-color: #c4752b;
+  transform: scale(1.2);
+}
+
+/* Container cho nút "Xem Kỹ Năng" */
+.scroll-to-skills-container {
+    margin-top: 30px; /* Khoảng cách từ box "Sở thích" phía trên */
+    text-align: center; /* Căn giữa nút trong container này */
+    
+}
+
+.scroll-to-skills-btn {
+    display: inline-flex; /* Thay vì flex, dùng inline-flex để nút không chiếm toàn bộ chiều rộng */
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa chữ và icon */
+    background-color: #2196f3; /* Màu xanh nổi bật */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px; /* Bo tròn nút */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bóng đổ cho nút */
+}
+
+.scroll-to-skills-btn:hover {
+    background-color: #1976d2; /* Màu xanh đậm hơn khi hover */
+    transform: translateY(-3px); /* Nâng nhẹ nút khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-skills-btn .icon {
+    font-size: 1.4rem;
+    line-height: 1; /* Đảm bảo mũi tên căn chỉnh tốt */
+}
+
+/* === HOBBIES BÊN TRONG ABOUT === */
+.hobbies-gallery {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra */
+    padding: 15px; /* Khoảng đệm xung quanh gallery */
+    border-radius: 8px; /* Bo góc cho gallery */
+    position: relative; /* Dùng để định vị ảnh con */
+   
+}
+/* Container mới để bọc ảnh và nhãn hover */
+.hobbies-gallery .image-container {
+    position: relative; /* Quan trọng: để .hover-label định vị absolute bên trong nó */
+    width: 100%;
+    height: 100%; /* Chiếm toàn bộ không gian của hobbies-gallery */
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex; /* Để căn giữa ảnh trong container */
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbies-gallery img {
+    max-width: 100%;
+    max-height: calc(100% - 30px); /* Tính toán chiều cao tối đa trừ đi không gian cho text */
+    width: 80%;
+    height: 90%;
+    object-fit: cover; /* Hoặc 'cover' tùy thuộc vào cách bạn muốn ảnh hiển thị */
+    border-radius: 20px;
+    display: block;
+    opacity: 1; /* Mặc định hiển thị */
+    transition: opacity 0.5s ease; /* Hiệu ứng fade */
+    margin: auto; /* Căn giữa ảnh trong container */
+}
+
+/* THÊM: Style cho lớp phủ (label) */
+.hover-label {
+    position: absolute;
+    bottom: 1px; /* Cách lề trên 10px */
+    right: 42%; /* Cách lề phải 10px */
+    background-color: rgba(56, 57, 57, 0.9); /* Màu xanh của bạn, hơi trong suốt */
+    color: #fff; /* Màu chữ trắng */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem; /* Kích thước chữ nhỏ hơn */
+    font-weight: 500;
+    opacity: 0; /* Mặc định ẩn */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt mà */
+    pointer-events: none; /* Rất quan trọng: cho phép click xuyên qua label */
+    z-index: 5; /* Đảm bảo nó nằm trên ảnh */
+    transform: translateY(-5px); /* Hiệu ứng dịch chuyển nhẹ khi ẩn */
+}
+
+/* THÊM: Hiệu ứng hover cho lớp phủ */
+.image-container:hover .hover-label {
+    opacity: 1; /* Hiển thị lớp phủ khi hover vào container */
+}
+
+/* -- SKILLS -- */
+.skills {
+    min-height: 100vh;
+    width: 100vw;
+    /* Dựa trên ảnh: nền có gradient và các hạt sao */
+    background:black;
+    position: relative;
+    overflow: hidden; /* Đảm bảo không tràn ra ngoài */
+    padding: 80px 50px; /* Padding cho toàn bộ section */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Chữ trắng trên nền tối */
+}
+
+.centered-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 100%;
+    display: block;
+    top: 20px;
+    display: inline-block;
+    font-size: 2rem;
+}
+.centered-title::after{
+    background-color: #2196f3;
+    content: '';
+    display: block;
+    width: 100px; /* Độ dài gạch chân */
+    height: 4px; /* Độ dày gạch chân */
+    background-color: #2196f3; /* Màu gạch chân */
+    margin: 10px auto 0 auto; /* Canh giữa */
+    border-radius: 4px;
+}
+
+.skills-content {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    gap: 80px; /* Khoảng cách giữa 2 cột */
+    max-width: 1200px; /* Giới hạn chiều rộng tổng thể */
+    margin: 0 auto; /* Căn giữa content */
+    z-index: 2; /* Đảm bảo nằm trên lớp hạt sao */
+    position: relative; /* Cho z-index hoạt động */
+}
+
+.skills-left {
+    flex: 1; /* Cho phép co giãn */
+    max-width: 500px; /* Giới hạn chiều rộng */
+    text-align: left;
+}
+
+.skills-left h2 {
+    font-size: 1.5rem;
+    color: #a0a0a0; /* Màu xám cho "MY SKILLS" */
+    margin-bottom: 10px;
+}
+
+.skills-left h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.skills-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc; /* Màu chữ sáng hơn cho đoạn văn */
+}
+
+.skills-left .btn {
+    /* Sử dụng lại style .btn từ hero section */
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 25px; /* Điều chỉnh padding cho nút */
+    background-color: #2196f3; /* Màu xanh cho nút */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.skills-left .btn:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+.skills-right {
+    flex: 1; /* Cho phép co giãn */
+    display: flex;
+    flex-direction: column; /* Sắp xếp grid và toggle dọc */
+    align-items: center; /* Căn giữa nội dung trong cột phải */
+    gap: 40px; /* Khoảng cách giữa grid và toggle */
+}
+/* Hiệu ứng xuất hiện từ trái/phải */
+.skills-left,
+.skills-right {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+.skills-left.hidden-left {
+  transform: translateX(-100px);
+}
+
+.skills-right.hidden-right {
+  transform: translateX(100px);
+}
+
+.skills-left.animate-in,
+.skills-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 cột, mỗi cột 100px */
+    gap: 25px; /* Khoảng cách giữa các item */
+    justify-content: center; /* Căn giữa grid trong .skills-right */
+}
+
+.skill-item {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #2e2e4e, #4a4a8a); /* Gradient cho nền icon */
+    border-radius: 15px; /* Bo góc lớn hơn */
+    display: flex;
+    flex-direction: column; /* Ảnh và text xếp dọc */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Bóng đổ mạnh hơn */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Hiển thị con trỏ tay khi hover */
+    padding: 10px; /* Padding bên trong item */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px); /* Hiệu ứng nâng lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Bóng đổ đậm hơn khi hover */
+}
+
+.skill-item img {
+    width: 60px; /* Kích thước icon */
+    height: 60px; /* Kích thước icon */
+    object-fit: contain;
+    margin-bottom: 5px; /* Khoảng cách giữa icon và tên */
+}
+
+.skill-item .skill-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ccc;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap; /* Giữ tên trên một dòng */
+  opacity: 0;
+  transform: translateY(100%); /* Dịch chuyển xuống dưới để ẩn */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển động */
+  box-sizing: border-box;
+}
+
+.skill-item:hover .skill-name {
+    opacity: 1; /* Hiển thị khi hover */
+    transform: translateY(-5px); /* Đưa về vị trí ban đầu */
+}
+
+/* Toggle buttons for Skills/Tools */
+.skills-toggle {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3); /* Nền cho nhóm nút */
+    border-radius: 25px; /* Bo tròn hoàn toàn */
+    padding: 5px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skills-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 20px; /* Bo tròn cho từng nút */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-btn.active {
+    background-color: #2196f3; /* Màu xanh khi active */
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+    color: #fff;
+}
+
+.skills-btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1); /* Nền mờ khi hover không active */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .skills-content {
+        flex-direction: column; /* Stack columns on smaller screens */
+        text-align: center; /* Center text for stacked layout */
+    }
+
+    .skills-left {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .skills-left h1 {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills {
+        padding: 60px 20px;
+    }
+
+    .skills-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 90px); /* 2 cột trên màn hình nhỏ hơn */
+        gap: 20px;
+    }
+
+    .skill-item {
+        width: 90px;
+        height: 90px;
+    }
+
+    .skill-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-left h1 {
+        font-size: 2rem;
+    }
+    .skills-left h2 {
+        font-size: 1.2rem;
+    }
+    .skills-left p {
+        font-size: 0.9rem;
+    }
+    .skills-left .btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 80px); /* 2 cột nhỏ hơn nữa */
+        gap: 15px;
+    }
+    .skill-item {
+        width: 80px;
+        height: 80px;
+    }
+    .skill-item img {
+        width: 45px;
+        height: 45px;
+    }
+    .skills-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Keyframes cho animation fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes cho animation fade-out (tùy chọn nếu muốn hiệu ứng rõ ràng hơn) */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Class cho grid khi đang animation */
+.skills-grid.fade-out {
+    animation: fadeOut 0.3s ease-out forwards; /* Chạy animation fadeOut và giữ trạng thái cuối cùng */
+}
+
+.skills-grid.fade-in {
+    animation: fadeIn 0.4s ease-in forwards; /* Chạy animation fadeIn */
+}
+
+/* --- CERTIFICATES & AWARDS --- */
+.certificates {
+    padding: 80px 50px;
+    background-color: #f7f7f7; /* Nền sáng cho phần này */
+    text-align: center;
+}
+
+.certificates .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block; /* Để gạch chân căn giữa */
+}
+
+.certificates .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #2196f3; /* Màu xanh gạch chân */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2 cột, responsive */
+    gap: 30px; /* Khoảng cách giữa các box */
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center; /* Căn giữa grid nếu có ít item */
+}
+
+.certificate-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    text-align: center;
+    position: relative; /* Quan trọng cho overlay */
+    overflow: hidden; /* Đảm bảo overlay không tràn ra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate-item:hover {
+    transform: translateY(-8px); /* Nâng lên khi hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bóng đổ đậm hơn */
+    background-color: #a8d1f2;
+}
+
+.certificate-item .cert-icon {
+    width: 70px; /* Kích thước vùng chứa icon */
+    height: 70px;
+    background-color: #2196f3; /* Màu nền cho icon */
+    border-radius: 50%; /* Hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px; /* Căn giữa và khoảng cách dưới */
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+}
+
+.certificate-item .cert-icon img {
+    width: 40px; /* Kích thước ảnh icon */
+    height: 40px;
+    object-fit: contain;
+}
+
+.certificate-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.certificate-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.certificate-item .cert-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #2196f3; /* Màu xanh */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.certificate-item .cert-btn:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive Adjustments for Certificates --- */
+@media (max-width: 992px) {
+    .certificates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Điều chỉnh cột cho màn hình trung bình */
+    }
+}
+
+@media (max-width: 768px) {
+    .certificates {
+        padding: 60px 20px;
+    }
+    .certificates .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .certificates-grid {
+        grid-template-columns: 1fr; /* Một cột trên màn hình nhỏ */
+    }
+    .certificate-item {
+        padding: 25px;
+    }
+    .certificate-item h3 {
+        font-size: 1.3rem;
+    }
+    .certificate-item p {
+        font-size: 0.9rem;
+    }
+  }
+    .modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Giữ vị trí khi cuộn */
+    z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    overflow: auto; /* Cho phép cuộn nếu hình ảnh quá lớn */
+    background-color: rgba(0,0,0,0.8); /* Nền tối mờ */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    animation: fadeIn 0.3s forwards; /* Hiệu ứng mờ dần nền */
+}
+
+/* Nội dung Modal (hình ảnh) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Giới hạn kích thước hình ảnh */
+    max-height: 90vh; /* Giới hạn chiều cao hình ảnh */
+    transform: scale(0.7); /* Kích thước ban đầu nhỏ hơn để zoom */
+    opacity: 0; /* Ẩn ban đầu */
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s ease-out; /* Hiệu ứng zoom đàn hồi */
+    border-radius: 8px; /* Bo góc nhẹ */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5); /* Đổ bóng mạnh hơn */
+}
+
+/* Hiển thị modal và zoom */
+.modal.show {
+    display: flex; /* Hiển thị modal */
+}
+
+.modal.show .modal-content {
+    transform: scale(1); /* Phóng to ra kích thước thật */
+    opacity: 1; /* Hiện rõ dần */
+}
+
+/* Nút đóng */
+.close-button {
+    position: absolute;
+    top: 25px; /* Điều chỉnh vị trí nút X */
+    right: 40px;
+    color: #fff;
+    font-size: 45px; /* Kích thước nút X lớn hơn */
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001; /* Đảm bảo nút x nằm trên hình ảnh */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Thêm bóng cho nút X */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ccc; /* Màu xám nhạt hơn khi hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Keyframes cho hiệu ứng fade in của modal background */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes cho hiệu ứng fade out của modal background */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.modal.hide {
+    animation: fadeOut 0.3s forwards;
+}
+
+/* Ngăn cuộn trang khi modal hiển thị */
+body.modal-open {
+    overflow: hidden;
+}
+/* --- Thêm CSS cho nút cuộn tới Projects --- */
+.section-action {
+    margin-top: 50px; /* Khoảng cách từ grid chứng chỉ */
+    text-align: center; /* Căn giữa button */
+}
+
+.scroll-to-projects {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #28a745; /* Màu xanh lá cây đẹp hơn cho button này */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Đổ bóng nhẹ */
+}
+
+.scroll-to-projects:hover {
+    background-color: #218838; /* Màu đậm hơn khi hover */
+    transform: translateY(-3px); /* Nâng lên một chút */
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4); /* Đổ bóng đậm hơn */
+}
+
+/* Responsive adjustments for the new button (tùy chọn) */
+@media (max-width: 768px) {
+    .section-action {
+        margin-top: 40px;
+    }
+    .scroll-to-projects {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* --- PROJECTS SECTION --- */
+.projects {
+    padding: 80px 50px;
+    background-color: #282a36; /* Nền tối như hình mẫu */
+    color: #f8f8f2; /* Màu chữ sáng */
+    text-align: center;
+}
+
+.projects .section-title.projects-subtitle {
+    font-size: 2.5rem;
+    color: #f8f8f2;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.projects .section-title.projects-subtitle::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #50fa7b; /* Màu xanh lá cây nổi bật */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.project-carousel {
+    max-width: 1400px; /* Chiều rộng tối đa của carousel */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Quan trọng để ẩn các dự án không hoạt động */
+}
+
+.project-item {
+    display: flex; /* Bố cục flex cho 2 cột */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    gap: 40px; /* Khoảng cách giữa 2 cột */
+    padding: 40px;
+    background-color: #2e303e; /* Nền tối hơn cho từng dự án */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Bóng đổ mạnh hơn */
+    opacity: 0; /* Ẩn mặc định */
+    transform: translateX(100%); /* Di chuyển ra ngoài màn hình bên phải */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Hiệu ứng chuyển động */
+    position: absolute; /* Đặt các dự án chồng lên nhau */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Đảm bảo chiều cao để các item chồng đúng */
+}
+
+.project-item.active {
+    opacity: 1; /* Hiển thị dự án hoạt động */
+    transform: translateX(0); /* Đưa về vị trí ban đầu */
+    position: relative; /* Giúp nó chiếm không gian và các nút nav hoạt động */
+}
+
+/* Hiệu ứng trượt vào từ bên trái */
+.project-item.active.from-left {
+    transform: translateX(-100%); /* Đặt ở bên trái trước khi trượt vào */
+    opacity: 0;
+}
+.project-item.active.from-left.animate-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Hiệu ứng trượt vào từ bên phải */
+.project-item.active.from-right {
+    transform: translateX(100%); /* Đặt ở bên phải trước khi trượt vào */
+    opacity: 0;
+}
+.project-item.active.from-right.animate-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.project-details {
+    flex: 1; /* Chiếm 1 phần không gian */
+    text-align: left;
+    max-width: 50%; /* Giới hạn chiều rộng của phần text */
+}
+
+.project-number {
+    font-size: 4rem; /* Kích thước lớn cho số thứ tự */
+    color: #50fa7b; /* Màu xanh lá cây */
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block; /* Để nó chiếm dòng riêng */
+    opacity: 0.8;
+}
+
+.project-title {
+    font-size: 2.8rem; /* Kích thước tiêu đề */
+    color: #bd93f9; /* Màu tím nhạt */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.project-description p {
+    font-size: 1.1rem;
+    color: #f8f8f2;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    
+}
+
+.project-tech {
+    font-size: 1.2rem;
+    color: #ffb86c; /* Màu cam */
+    font-weight: bold;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-tech .tech-icon {
+    font-size: 0.5rem;
+    color: #ffb86c; 
+}
+
+.project-image {
+    flex: 1; /* Chiếm 1 phần không gian */
+    text-align: center; 
+}
+
+.project-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 20px; /* Vị trí dưới cùng */
+    right: 40px; /* Vị trí bên phải */
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.nav-button {
+    background-color: #44475a; /* Nền nút tối */
+    color: #f8f8f2;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.8rem;
+    border-radius: 50%; /* Nút tròn */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover {
+    background-color: #6272a4; /* Màu đậm hơn khi hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for Projects section */
+@media (max-width: 992px) {
+    .projects {
+        padding: 60px 30px;
+    }
+    .project-item {
+        flex-direction: column; /* Xếp chồng cột trên màn hình nhỏ */
+        gap: 30px;
+        padding: 30px;
+    }
+    .project-details,
+    .project-image {
+        max-width: 100%; /* Toàn bộ chiều rộng */
+        text-align: center; /* Căn giữa text */
+    }
+    .project-number {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+    .project-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    .project-description p {
+        font-size: 1rem;
+    }
+    .project-tech {
+        justify-content: center; /* Căn giữa công nghệ */
+    }
+    .carousel-nav {
+        position: static; /* Đặt nút điều hướng dưới cùng và căn giữa */
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 40px 20px;
+    }
+    .projects .section-title.projects-subtitle {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .project-item {
+        padding: 25px;
+    }
+    .project-number {
+        font-size: 2.5rem;
+    }
+    .project-title {
+        font-size: 1.8rem;
+    }
+    .project-description p {
+        font-size: 0.9rem;
+    }
+    .nav-button {
+        padding: 12px 16px;
+        font-size: 1.5rem;
+    }
+}
+/*-- nút contact */
+.project-contact-action {
+    margin-top: 60px; /* Khoảng cách từ carousel dự án */
+    text-align: center; /* Căn giữa nút */
+}
+
+.project-contact-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #50fa7b; /* Màu xanh lá cây nổi bật */
+    color: #282a36; /* Màu chữ tối để dễ đọc trên nền xanh */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(80, 250, 123, 0.4);
+}
+
+.project-contact-btn:hover {
+    background-color: #62ff92; /* Màu sáng hơn khi hover */
+    transform: translateY(-5px); /* Nâng lên mạnh hơn */
+    box-shadow: 0 8px 20px rgba(80, 250, 123, 0.5);
+}
+
+/* Điều chỉnh responsive cho nút Liên hệ (tùy chọn) */
+@media (max-width: 768px) {
+    .project-contact-action {
+        margin-top: 40px;
+    }
+    .project-contact-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+/* --- CONTACT SECTION --- */
+.contact {
+    padding: 80px 50px;
+    background-color: #1a1a2e; /* Nền tối như hình mẫu */
+    color: #f8f8f2; /* Màu chữ sáng */
+    text-align: center;
+}
+
+.contact .section-title {
+    font-size: 2.5rem;
+    color: #fff; /* Tiêu đề màu trắng */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact .section-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background-color: #50fa7b; /* Gạch chân màu xanh lá */
+    margin: 12px auto 0;
+    border-radius: 4px;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.contact-content {
+    display: flex; /* Bố cục 2 cột */
+    gap: 60px; /* Khoảng cách giữa 2 cột */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #24243a; /* Nền tối hơn cho content box */
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.contact-content:hover{
+  background-color: rgb(42, 62, 91);
+  transform: translateY(-5px);
+  transition: background-color 0.3s ease, transform 0.5s ease;
+}
+.contact-info,
+.contact-form {
+    flex: 1; /* Mỗi cột chiếm 1 phần bằng nhau */
+    text-align: left;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: #bd93f9; /* Màu tím nhạt cho tiêu đề con */
+    margin-bottom: 30px;
+}
+
+/* Thông tin liên hệ */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: center; /* Căn trên cùng */
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.contact-info ul li .fas { /* Icon Font Awesome */
+    font-size: 1.7rem;
+    color: #ffffff; /* Màu xanh lá cây cho icon */
+    min-width: 30px; /* Đảm bảo icon có đủ không gian */
+    text-align: center;
+     
+}
+
+.contact-info ul li h4 {
+    font-size: 1.2rem;
+    color: #545ddb;
+    margin-bottom: 5px;
+}
+
+.contact-info ul li p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Form liên hệ */
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e303e; /* Nền input tối */
+    color: #f8f8f2; /* Chữ input sáng */
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước input */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: #383a54;
+    box-shadow: 0 0 0 3px #50fa7b, 0 0 0 6px rgba(80, 250, 123, 0.3); /* Viền focus màu xanh lá */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Cho phép thay đổi chiều cao */
+    min-height: 120px;
+}
+
+.form-group.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đẩy hai phần tử ra hai bên */
+    margin-top: 30px;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #8be9fd; /* Màu xanh dương nhạt */
+}
+
+.recaptcha-placeholder .success-icon {
+    font-size: 1.2rem;
+    color: #50fa7b; /* Màu xanh lá cây */
+}
+
+.cloudflare-logo {
+    height: 18px; /* Kích thước logo Cloudflare */
+    vertical-align: middle;
+}
+
+.btn.send-message-btn {
+    background-color: #8be9fd; /* Màu xanh dương nhạt cho nút SEND */
+    color: #282a36; /* Chữ tối */
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.send-message-btn:hover {
+    background-color: #6272a4; /* Màu đậm hơn khi hover */
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments for Contact section */
+@media (max-width: 992px) {
+    .contact-content {
+        flex-direction: column; /* Xếp chồng các cột trên màn hình nhỏ */
+        gap: 40px;
+        padding: 40px;
+    }
+    .contact-info,
+    .contact-form {
+        flex: auto; /* Tự động điều chỉnh kích thước */
+        width: 100%;
+        max-width: 100%;
+    }
+    .contact-info h3,
+    .contact-form h3 {
+        text-align: center; /* Căn giữa tiêu đề con */
+    }
+    .contact-info ul li {
+        justify-content: center; /* Căn giữa các mục thông tin */
+        text-align: center;
+        flex-direction: column; /* Xếp icon và text chồng lên nhau */
+        gap: 5px;
+    }
+    .contact-info ul li .fas {
+        padding-top: 0;
+    }
+    .form-group.form-footer {
+        flex-direction: column; /* Xếp chồng recaptcha và nút SEND */
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 20px;
+    }
+    .contact-content {
+        padding: 30px;
+    }
+    .contact .section-title {
+        font-size: 2rem;
+    }
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 1.5rem;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .btn.send-message-btn {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+    }
+}
+
+/* --- Back-to-Top Button --- */
+.back-to-top-btn {
+    display: none; /* Mặc định ẩn nút */
+    position: fixed; /* Cố định vị trí trên màn hình */
+    bottom: 30px; /* Cách đáy 30px */
+    right: 30px; /* Cách bên phải 30px */
+    z-index: 99; /* Đảm bảo nút nằm trên các phần tử khác */
+    border: none; /* Không viền */
+    outline: none; /* Không outline khi focus */
+    background-color: #989a9a; /* Màu nền xanh dương nhạt (giống nút SEND) */
+    color: #282a36; /* Màu chữ/icon tối */
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuột */
+    padding: 15px 20px; /* Kích thước nút */
+    border-radius: 100%; /* Bo tròn hoàn toàn để tạo thành hình tròn */
+    font-size: 1.2rem; /* Kích thước mũi tên */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Bóng đổ nhẹ */
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: #6272a4; /* Màu đậm hơn khi hover */
+    color: #fff; /* Chữ/icon trắng khi hover */
+    transform: translateY(-5px); /* Nâng nút lên một chút */
+}
+
+/* Hiển thị nút khi có class 'show' */
+.back-to-top-btn.show {
+    display: block;
+}
+
+/* Responsive cho nút Back-to-Top */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 16px;
+        font-size: 1.5rem;
+    }
+}
+
+/* --- FOOTER SECTION --- */
+.main-footer {
+    background-color: #424242;
+    background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại */
+    background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ footer */
+    background-position: bottom; /* Căn cuối hình ảnh trong footer */
+    color: #f8f8f2; /* Màu chữ sáng */
+    text-align: center;
+    padding: 18px 20px; /* Padding trên dưới 30px, trái phải 20px */
+    font-size: 1rem;
+    position: relative; /* Cần thiết nếu muốn căn chỉnh bất kỳ phần tử con tuyệt đối nào trong tương lai */
+}
+
+.main-footer p {
+    margin: 0; /* Xóa margin mặc định của paragraph */
+    line-height: 1.5;
+}
+
+/* Bạn có thể thêm một số responsive cơ bản cho footer nếu cần */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 25px 15px;
+        font-size: 0.9rem;
+    }
+}
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #2196f3;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+}
+
+.mainnav a {
+  color: #fff;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mainnav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.social-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* Icon từng nền tảng */
+.fb {
+  background-image: url('/images/facebook-icon.png'); /* bạn thay link icon phù hợp */
+  border-radius: 20%;
+}
+
+.zalo {
+  background-image: url('/images/zalo.png');
+  border-radius: 20%;
+}
+
+.insta {
+  background-image: url('/images/insta-icon.jpg');
+  border-radius: 20%;
+}
